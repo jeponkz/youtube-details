@@ -2,6 +2,7 @@ import { use, useState } from 'react'
 import { Input, Button, Heading, Text, Image, Container, Table, Tbody, Tr, Td, Th, Spinner, useToast } from '@chakra-ui/react'
 import Head from 'next/head'
 import axios from 'axios'
+import Hero from '../components/Hero'
 
 type VideoDetails = {
   title: string
@@ -91,16 +92,20 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>YouTube Video Details | My App</title>
+        <title>Get Complete Details About Any YouTube Video | Youtube Details</title>
         <meta
           name="description"
-          content="Get details for any YouTube video including title, description, thumbnail, and publish date."
+          content="Our website provides you with all the essential details about any YouTube video, including the title, thumbnail, description, and more. Enter the video URL and get all the information you need!"
         />
       </Head>
-      <Container maxW="xl" my={8}>
+      <Container maxW="900px" my={8}>
+        <Hero />
         <Heading as="h1" size="2xl" mb={4}>
           YouTube Video Details
         </Heading>
+        <Text>
+        Get comprehensive details on any YouTube video with our powerful tool.
+        </Text>
         <form onSubmit={handleSubmit}>
           <Input
             value={videoUrl}

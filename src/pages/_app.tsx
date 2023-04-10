@@ -1,4 +1,5 @@
 import { ChakraProvider } from '@chakra-ui/react'
+import '@fontsource/dm-sans'
 
 import theme from '../theme'
 import { AppProps } from 'next/app'
