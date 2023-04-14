@@ -70,7 +70,7 @@ export default function Home() {
       setVideoDetails({
         title: video.snippet.title,
         description: video.snippet.description,
-        thumbnailUrl: video.snippet.thumbnails.medium.url,
+        thumbnailUrl: video.snippet.thumbnails.high.url,
         publishedAt: video.snippet.publishedAt,
       })
 
@@ -99,9 +99,8 @@ export default function Home() {
         />
       </Head>
       <Container maxW="900px" my={8}>
-        <Hero />
         <Heading as="h1" size="2xl" mb={4}>
-          YouTube Video Details
+          Discover More About Your Favorite YouTube Videos
         </Heading>
         <Text>
         Get comprehensive details on any YouTube video with our powerful tool.
@@ -141,6 +140,7 @@ export default function Home() {
                   <Th>Thumbnail</Th>
                   <Td>
                     <Image src={videoDetails.thumbnailUrl} alt={videoDetails.title} />
+                    <p>{videoDetails.thumbnailUrl}</p>
                   </Td>
                 </Tr>
                 <Tr>
