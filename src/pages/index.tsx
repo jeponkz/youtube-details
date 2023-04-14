@@ -26,7 +26,7 @@ export default function Home() {
       return
     }
     const videoIdMatch = videoUrl.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/)
-  
+    
     if (!videoIdMatch) {
       // Invalid YouTube video URL
       toast({
@@ -70,7 +70,7 @@ export default function Home() {
       setVideoDetails({
         title: video.snippet.title,
         description: video.snippet.description,
-        thumbnailUrl: video.snippet.thumbnails.high.url,
+        thumbnailUrl: video.snippet.thumbnails.maxres.url,
         publishedAt: video.snippet.publishedAt,
       })
 
@@ -88,6 +88,7 @@ export default function Home() {
   
     setIsLoading(false)
   }
+
 
   return (
     <>
@@ -139,8 +140,8 @@ export default function Home() {
                 <Tr>
                   <Th>Thumbnail</Th>
                   <Td>
-                    <Image src={videoDetails.thumbnailUrl} alt={videoDetails.title} />
-                    <p>{videoDetails.thumbnailUrl}</p>
+                    <Image src={videoDetails.thumbnailUrl} alt={videoDetails.title} my={4} />
+                    <Input value={videoDetails.thumbnailUrl} />
                   </Td>
                 </Tr>
                 <Tr>
